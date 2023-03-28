@@ -7,10 +7,22 @@ const Home: NextPage = () => {
       {/* select itmes box */}
       <div className="bg-white p-8 rounded-3xl shadow-sm">
         <span className="font-semibold text-3xl">Select Item</span>
-        <div className="flex justify-between my-2">
-          <span className="text-gray-500">Grey Chair</span>
-          <span className="font-semibold">$19</span>
-        </div>
+        <ul>
+          {/* array Map 별 classname 지정 */}
+          {[1,2,3,4,5].map((i)=>(
+            <div key={i} className="flex justify-between my-2 odd:bg-blue-500 even:bg-yellow-400" >
+              <span className="text-gray-500">Grey Chair</span>
+              <span className="font-semibold">$19</span>
+            </div>
+          ))}
+        </ul>
+        <ul>
+          {["a","b","c",""].map((c,i) =>
+          <li key={i} className="bg-red-400 py-2 empty:hidden">
+            {c}
+          </li>)}
+        </ul>
+        
         <div className="flex justify-between">
           <span className="text-yellow-500">Yellow Chair</span>
           <span className="font-semibold">$19</span>
@@ -20,11 +32,13 @@ const Home: NextPage = () => {
           <span className="font-semibold">$38</span>
         </div>
         {/* Modifier */}
-        <button
-          className="mt-5 bg-blue-500 text-white p-3 text-center rounded-xl w-2/4 mx-auto
-          hover:bg-teal-500 hover:text-black active:bg-yellow-500 focus:text-red-500">
-            Checkout
-        </button>
+        <div className="flex">
+          <button
+            className="mt-5 bg-blue-500 text-white p-3 text-center rounded-xl w-2/4 mx-auto
+            hover:bg-teal-500 hover:text-black active:bg-yellow-500 focus:text-red-500">
+              Checkout
+          </button>
+        </div>
       </div>
       {/* Profile box */}
       <div className="bg-white overflow-hidden rounded-3xl shadow-xl">
