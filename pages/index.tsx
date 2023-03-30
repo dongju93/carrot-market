@@ -41,7 +41,7 @@ const Home: NextPage = () => {
         </div>
       </div>
       {/* Profile box */}
-      <div className="bg-white overflow-hidden rounded-3xl shadow-xl">
+      <div className="bg-white overflow-hidden rounded-3xl shadow-xl group">
         <div className="bg-blue-500 p-6 pb-14">
           <span className="text-white text-2xl">Profile</span>
         </div>
@@ -51,7 +51,7 @@ const Home: NextPage = () => {
               <span className="text-sm text-gray-500">Orders</span>
               <span className="font-medium">5</span>
             </div>
-            <div className="h-24 w-24 bg-lime-500 rounded-full" />
+            <div className="h-24 w-24 bg-lime-500 rounded-full group-hover:bg-red-500 transition-colors" />
             <div className="flex flex-col items-center">
               <span className="text-sm text-gray-500">Spent</span>
               <span className="font-medium">$340</span>
@@ -97,6 +97,18 @@ const Home: NextPage = () => {
       </div>
       <div className="bg-white p-10 rounded-2xl shadow-sm"></div>
     </div>
+    // peer modifier with sibling selector
+    // <form className="flex flex-col space-y-2 p-5">
+    //   <input 
+    //     type="text" 
+    //     required 
+    //     placeholder="Username" 
+    //     className="border p-1 border-gray-400 rounded-md peer" 
+    //   />
+    //   <span className="hidden peer-invalid:block text-red-500">Invalied input!</span>
+    //   <span className="hidden peer-valid:block text-teal-600">You got it right</span>
+    //   <input type="submit" value="Login" className="bg-slate-200" /> 
+    // </form>
   );
 }
 
