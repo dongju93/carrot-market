@@ -3,10 +3,9 @@ import type { NextPage } from "next";
 const Home: NextPage = () => {
   return (
     // 전체 그리드 생성
-    <div className="bg-slate-500 py-20 px-20 grid gap-10 min-h-screen">
+    <div className="bg-slate-500 xl:place-content-center py-20 px-20 grid gap-10 lg:grid-cols-2 xl:grid-cols-3 min-h-screen">
       {/* select itmes box */}
-      {/* 화면크기에 맞는 @media CSS 적용 */}
-      <div className="bg-white sm:bg-red-400 md:bg-teal-500 lg:bg-indigo-500 p-6 rounded-3xl shadow-sm">
+      <div className="bg-white flex flex-col justify-between p-6 rounded-3xl shadow-sm">
         <span className="font-semibold text-3xl">Select Item</span>
         {/* <ul>
           // array Map 별 classname 지정
@@ -46,7 +45,7 @@ const Home: NextPage = () => {
       </div>
       {/* Profile box */}
       <div className="bg-white overflow-hidden rounded-3xl shadow-xl group">
-        <div className="bg-blue-500 p-6 pb-14">
+        <div className="bg-blue-500 portrait:bg-indigo-500 landscape:bg-teal-500 xl:pb-40 p-6 pb-14">
           <span className="text-white text-2xl">Profile</span>
         </div>
         <div className="rounded-3xl p-6 relative bg-white -top-5">
@@ -68,7 +67,7 @@ const Home: NextPage = () => {
         </div>
       </div>
       {/* Like, Select round box */}
-      <div className="bg-white p-10 rounded-2xl shadow-sm">
+      <div className="bg-white p-10 rounded-2xl shadow-sm lg:col-span-2 xl:col-span-1">
         <div className="flex mb-5 justify-between items-center">
           <span>⬅️</span>
           <div className="space-x-3">
@@ -99,7 +98,6 @@ const Home: NextPage = () => {
           <button className="bg-blue-500 p-2 px-8 text-sm text-center text-white rounded-lg">Add to Cart</button>
         </div>
       </div>
-      <div className="bg-white p-10 rounded-2xl shadow-sm"></div>
     </div>
   );
 }
