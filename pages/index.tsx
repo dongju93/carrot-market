@@ -5,10 +5,11 @@ const Home: NextPage = () => {
     // 전체 그리드 생성
     <div className="bg-slate-500 py-20 px-20 grid gap-10 min-h-screen">
       {/* select itmes box */}
-      <div className="bg-white p-8 rounded-3xl shadow-sm">
+      {/* 화면크기에 맞는 @media CSS 적용 */}
+      <div className="bg-white sm:bg-red-400 md:bg-teal-500 lg:bg-indigo-500 p-6 rounded-3xl shadow-sm">
         <span className="font-semibold text-3xl">Select Item</span>
-        <ul>
-          {/* array Map 별 classname 지정 */}
+        {/* <ul>
+          // array Map 별 classname 지정
           {[1,2,3,4,5].map((i)=>(
             <div key={i} className="flex justify-between my-2 odd:bg-blue-500 even:bg-yellow-400" >
               <span className="text-gray-500">Grey Chair</span>
@@ -21,8 +22,11 @@ const Home: NextPage = () => {
           <li key={i} className="bg-red-400 py-2 empty:hidden">
             {c}
           </li>)}
-        </ul>
-        
+        </ul> */}
+        <div className="flex justify-between">
+          <span className="text-gray-500">Grey Chair</span>
+          <span className="font-semibold">$19</span>
+        </div>
         <div className="flex justify-between">
           <span className="text-yellow-500">Yellow Chair</span>
           <span className="font-semibold">$19</span>
