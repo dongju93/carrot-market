@@ -6,7 +6,8 @@ const Home: NextPage = () => {
     <div className="dark bg-slate-500 dark:bg-slate-800 xl:place-content-center py-20 px-20 grid gap-10 lg:grid-cols-2 xl:grid-cols-3 min-h-screen">
       {/* select itmes box */}
       <div className="dark:bg-gray-400 bg-white flex flex-col justify-between p-6 rounded-3xl shadow-sm">
-        <span className="dark:text-white font-semibold text-3xl">Select Item</span>
+        {/* Just In Time compiler, 사용자가 원하는 [값] 설정 가능, TailwindCSS가 클래스를 생성해 줌 */}
+        <span className="dark:text-white font-semibold text-[45px]">Select Item</span>
         {/* <ul>
           // array Map 별 classname 지정
           {[1,2,3,4,5].map((i)=>(
@@ -37,7 +38,7 @@ const Home: NextPage = () => {
         {/* Modifier */}
         <div className="flex">
           <button
-            className="mt-5 bg-blue-500 text-white p-3 text-center rounded-xl w-2/4 mx-auto
+            className="mt-5 dark:bg-[#555] bg-blue-500 text-white p-3 text-center rounded-xl w-2/4 mx-auto
             dark:hover:bg-black active:bg-yellow-500 focus:text-red-500">
               Checkout
           </button>
@@ -45,7 +46,7 @@ const Home: NextPage = () => {
       </div>
       {/* Profile box */}
       <div className="bg-white overflow-hidden rounded-3xl shadow-xl group">
-        <div className="bg-blue-500 portrait:bg-indigo-500 landscape:bg-teal-500 xl:pb-40 p-6 pb-14">
+        <div className="bg-[url('/vercel.svg')] bg-blue-500 portrait:bg-indigo-500 landscape:bg-teal-500 xl:pb-40 p-6 pb-14">
           <span className="text-white text-2xl">Profile</span>
         </div>
         <div className="rounded-3xl p-6 relative bg-white -top-5">
