@@ -3,10 +3,10 @@ import type { NextPage } from "next";
 const Home: NextPage = () => {
   return (
     // 전체 그리드 생성
-    <div className="bg-slate-500 xl:place-content-center py-20 px-20 grid gap-10 lg:grid-cols-2 xl:grid-cols-3 min-h-screen">
+    <div className="dark bg-slate-500 dark:bg-slate-800 xl:place-content-center py-20 px-20 grid gap-10 lg:grid-cols-2 xl:grid-cols-3 min-h-screen">
       {/* select itmes box */}
-      <div className="bg-white flex flex-col justify-between p-6 rounded-3xl shadow-sm">
-        <span className="font-semibold text-3xl">Select Item</span>
+      <div className="dark:bg-gray-400 bg-white flex flex-col justify-between p-6 rounded-3xl shadow-sm">
+        <span className="dark:text-white font-semibold text-3xl">Select Item</span>
         {/* <ul>
           // array Map 별 classname 지정
           {[1,2,3,4,5].map((i)=>(
@@ -23,22 +23,22 @@ const Home: NextPage = () => {
           </li>)}
         </ul> */}
         <div className="flex justify-between">
-          <span className="text-gray-500">Grey Chair</span>
+          <span className="dark:text-white text-gray-500">Grey Chair</span>
           <span className="font-semibold">$19</span>
         </div>
         <div className="flex justify-between">
-          <span className="text-yellow-500">Yellow Chair</span>
+          <span className="dark:text-white text-yellow-500">Yellow Chair</span>
           <span className="font-semibold">$19</span>
         </div>
         <div className="flex justify-between mt-2 pt-2 border-t-2 border-dashed">
-          <span>Total</span>
+          <span className="dark:text-white">Total</span>
           <span className="font-semibold">$38</span>
         </div>
         {/* Modifier */}
         <div className="flex">
           <button
             className="mt-5 bg-blue-500 text-white p-3 text-center rounded-xl w-2/4 mx-auto
-            hover:bg-teal-500 hover:text-black active:bg-yellow-500 focus:text-red-500">
+            dark:hover:bg-black active:bg-yellow-500 focus:text-red-500">
               Checkout
           </button>
         </div>
