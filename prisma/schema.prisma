@@ -3,11 +3,15 @@
 
 generator client {
   provider = "prisma-client-js"
+  // add constraint
+  Features = ["referentialIntegrity"]
 }
 
 datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  // add constraint
+  relationMode = "prisma"
 }
 
 // Client 모델 생성

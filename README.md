@@ -12,4 +12,5 @@
 - [Autoprefixer](https://autoprefixer.github.io/)
 - [PostCSS](https://postcss.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
-- [Prisma ORM](https://www.prisma.io)
+- [Prisma ORM](https://www.prisma.io/)
+- [PlanetScale](https://planetscale.com/)
