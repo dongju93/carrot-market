@@ -14,4 +14,3 @@
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Prisma ORM](https://www.prisma.io/)
 - [PlanetScale](https://planetscale.com/)
-update
