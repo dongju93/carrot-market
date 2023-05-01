@@ -6,7 +6,7 @@ export default async function handler (
     req: NextApiRequest,
     res: NextApiResponse
     ) {
-    //  API 라우트로 유저 생성, async/await 사용, response 반환
+    //  API 라우트로 유저 생성 예시, async/await 사용, response 반환
     await client.user.create({
         data:{
         email: "dasd@naver.com",

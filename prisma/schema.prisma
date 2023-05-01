@@ -11,6 +11,8 @@ generator client {
 // pscale conncet carrot-market
 // open STUTIO
 // npx prisma studio
+// Model update
+// npx prisma push
 
 datasource db {
   provider     = "mysql"
