@@ -8,7 +8,7 @@ generator client {
 }
 
 // planet scale CONNECT database
-// pscale conncet carrot-market
+// pscale connect carrot-market
 // open STUTIO
 // npx prisma studio
 // Model update

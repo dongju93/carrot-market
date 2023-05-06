@@ -14,3 +14,10 @@
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Prisma ORM](https://www.prisma.io/)
 - [PlanetScale](https://planetscale.com/)
+
+pscale connect carrot-market
+npx prisma studio
+npm run dev
+
+npx prisma push
+npx prisma generate
