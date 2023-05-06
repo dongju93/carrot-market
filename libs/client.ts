@@ -12,4 +12,4 @@ export default new PrismaClient();
 // });
 
 // Prisma client에 모델 생성
-// nnpx prisma generate
+// npx prisma generate

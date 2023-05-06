@@ -1,74 +1,36 @@
-import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+
+// React-Hook-Form 을 사용함으로써 이룰 목표 : clear
+// 코드 줄이기(반복코드 제거)
+// 더 나은 검증
+// 더 나은 에러 핸들링
+// input 에 대한 완전한 제어
+// 이벤트에 대해 덜 신경쓰기 : clear
 
 export default function Forms() {
-    // 리액트 "useState" input 이벤트, 기본 상태는 빈 스트링.
-    const [username, setUsername] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [formErrors, setFormErrors] = useState("");
-    const [emailErrors, setEmailErrors] = useState("");
+    // 모든 폼의 state 는 useForm hook 을 사용함
+    // register : inpiut CONNECT TO state
+    // watch : 입력 변화를 계속 감시
+    const { register, watch } = useForm();
 
-    // onChangeEvent 타입스크립트의 EVENT-REACT-HTML 이벤트로 할당
-    const onUsernameChange = (
-        event: React.SyntheticEvent<HTMLInputElement>
-    ) => {
-        const {
-            currentTarget: { value },
-        } = event;
-        setUsername(value);
-    };
-    const onEmailChange = (event: React.SyntheticEvent<HTMLInputElement>) => {
-        const {
-            currentTarget: { value },
-        } = event;
-        // Error 출력 후 유저가 재입력 하였을 때 에러메시지 초기화 
-        setEmailErrors("");
-        setEmail(value);
-    };
-    const onPasswordChange = (
-        event: React.SyntheticEvent<HTMLInputElement>
-    ) => {
-        const {
-            currentTarget: { value },
-        } = event;
-        setPassword(value);
-    };
-    const onSubmit = (event: React.SyntheticEvent<HTMLFormElement>) => {
-        event.preventDefault();
-        // 사용자가 개발자 도구에서 HTML 속성을 제거하고 입력을 했을때를 가정하고
-        // Empty 입력으로 onSubmit 을 했을 때 보여질 에러 처리
-        if (username === "" || email === "" || password === "") {
-            setFormErrors('All forms are required')
-        }
-        if (!email.includes("@")) {
-            setEmailErrors('Email is required!')
-        }
-        console.log(username, email, password);
-    };
-
-    // 폼 자체와 각 입력에 onChange 이벤트 할당
-    // 브라우저 개발자 도구에서 제거 가능!, 에러 메시지 출력 필요
     return (
-        <form onSubmit={onSubmit}>
+        <form>
             <input
-                value={username}
-                onChange={onUsernameChange}
+                // register 내 있는 모든 속성을 input 엘리먼트에 할당
+                // onChange, name, value... 등 모두 입력할 필요가 없음
+                {...register("username")}
                 type="text"
                 placeholder="Username"
                 required
-                minLength={5}
             />
             <input
-                value={email}
-                onChange={onEmailChange}
+                {...register("email")}
                 type="email"
                 placeholder="Email"
                 required
             />
-            {emailErrors}
             <input
-                value={password}
-                onChange={onPasswordChange}
+                {...register("password")}
                 type="password"
                 placeholder="Password"
                 required
