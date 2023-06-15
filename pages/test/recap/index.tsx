@@ -18,14 +18,43 @@ const Home: NextPage = () => {
                 {/* text-3xl : 텍스트의 크기 지정(xs, xl..) */}
                 <span className="font-semibold text-3xl">Select Item</span>
                 {/* justify-between : 하위요소 간 균일한 간격을 줌 */}
-                <div className="flex justify-between">
-                    <span className="text-gray-500 my-2">Grey Chair</span>
-                    <span className="font-semibold">$19</span>
-                </div>
-                <div className="flex justify-between">
+                <ul>
+                    {/* array.map 적용 */}
+                    {/* first, last : array의 첫번째, 마지막 순서에만 특정한 스타일을 부여함 */}
+                    {/* only : array에 단 1개의 요소만 존재할 경우 스타일을 부여함 */}
+                    {[1, 2, 3, 4, 5].map((i) => (
+                        // #2
+                        // <div key={i} className="flex justify-between first:bg-blue-300 last:bg-blue-100 only:bg-red-500">
+                        // #2
+
+                        <div
+                            key={i}
+                            // odd, even : array 요소가 짝수거나 홀수일때 스타일을 부여함
+                            className="flex justify-between odd:bg-blue-50 even:bg-slate-50"
+                        >
+                            <span className="text-gray-500 my-2">
+                                Grey Chair
+                            </span>
+                            <span className="font-semibold">$19</span>
+                        </div>
+                    ))}
+                </ul>
+                <ul>
+                    {/* array에 비어있는(empty) 요소를 특정(target)하여 스타일을 부여함 */}
+                    {["a", "b", "c", "", "e"].map((c, i) => (
+                        <li className="bg-red-400 py-2 empty:bg-teal-500">
+                            {c}
+                        </li>
+                    ))}
+                </ul>
+
+                {/* #1 */}
+                {/* <div className="flex justify-between">
                     <span className="text-gray-500">Grey Chair</span>
                     <span className="font-semibold">$19</span>
-                </div>
+                </div> */}
+                {/* #1 */}
+
                 {/* border : 테두리 위치 및 pixel 크기 지정 / 테두리 스타일 지정 */}
                 <div className="flex justify-between mt-2 pt-2 border-t-2 border-dashed">
                     <span>Total</span>
@@ -81,9 +110,14 @@ const Home: NextPage = () => {
                     <span className="text-xs text-gray-500">Chair</span>
                     <div className="mt-3 mb-5 flex justify-between items-center">
                         <div className="space-x-2">
-                            <button className="w-5 h-5 rounded-full bg-yellow-500" />
-                            <button className="w-5 h-5 rounded-full bg-indigo-500" />
-                            <button className="w-5 h-5 rounded-full bg-green-500" />
+                            {/* 사용자가 버튼을 클릭했을 때 Visual feedback을 줄 수 있도록 transition 적용 */}
+                            {/* focus modifier, ring utility, just-in-time compiler */}
+                            {/* ring : CSS의 Box shadows로 생성된 링(ring), 색상(ring-yellow), 크기(ring-2), 간격(ring-offset-2), 투명도(ring-opacity-50)를 조절하여 색 연하게 표현이 가능함 */}
+                            {/* focus:ring 을 부여함으로서 ring을 구성하는 하위요소는 focus될 때만 영향을 받아 나타남 */}
+                            {/* transition : fade-in, out 에니메이션 */}
+                            <button className="w-5 h-5 rounded-full bg-yellow-500 transition focus:ring-2 ring-offset-2 ring-yellow-500 ring-opacity-90" />
+                            <button className="w-5 h-5 rounded-full bg-indigo-500 transition focus:ring-2 ring-offset-2 ring-indigo-500 ring-opacity-90" />
+                            <button className="w-5 h-5 rounded-full bg-green-500 transition focus:ring-2 ring-offset-2 ring-green-500 ring-opacity-90" />
                         </div>
                         <div className="flex items-center space-x-5">
                             {/* aspect-square : 정사각형 */}
