@@ -70,7 +70,8 @@ const Home: NextPage = () => {
                 </button>
             </div>
             {/* overflow : 영역보다 컨텐츠가 클때 보여주거나 숨길 수 있음 */}
-            <div className="bg-white overflow-hidden rounded-3xl shadow-2xl">
+            {/* group : div 영역에 속해있는 모든 하위요소들을 group화 시킴 */}
+            <div className="bg-white overflow-hidden rounded-3xl shadow-2xl group">
                 <div className="bg-blue-500 p-6 pb-14">
                     <span className="text-white text-2xl">Profile</span>
                 </div>
@@ -84,7 +85,9 @@ const Home: NextPage = () => {
                             </span>
                             <span className="font-medium">340</span>
                         </div>
-                        <div className="h-24 w-24 bg-red-300 rounded-full" />
+                        {/* group- : group 요소가 ~될 때 스타일을 적용*/}
+                        {/* transition-colors : 자연스러운 색 변경을 위해 추가 */}
+                        <div className="h-24 w-24 bg-red-300 rounded-full group-hover:bg-slate-600 transition-colors" />
                         <div className="flex flex-col items-center">
                             <span className="text-sm text-gray-500">Spent</span>
                             <span className="font-medium">$340</span>
